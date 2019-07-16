@@ -7,7 +7,7 @@ import { CategoryComponent } from './category/category.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [{
-	path : 'admin', component : AdminnavComponent, children : [
+	path : 'admin', component : AdminnavComponent, outlet:'adm', children : [
 	{
 			path : 'addproduct', component : ProductComponent
 

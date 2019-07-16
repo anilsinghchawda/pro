@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LogService } from '../services/log.service';
 import * as bootstrap from "bootstrap";
 import * as jQuery from 'jquery';
-import * as $ from 'jquery';
+import * as $AB from 'jquery';
 import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
 import { userObj } from '../models';
@@ -41,13 +41,14 @@ log = {} as logObj;
     this.dulClass.logFun(obj).subscribe((back : any)=>{
       console.log(back.userLoggedIn);
       console.log(back._id);
+      this.userLoggedIn=back.userLoggedIn;
       // this.userLoggedIn=new Observable<boolean> 
       //   observe=>{
       //     back.userLoggedIn;
       //   };
       // this.userLoggedIn=back.userLoggedIn;
       // this.userId=back._id;
-    jQuery("#login").modal('hide');
+    $("#login").modal('hide');
     console.log("Login successfull");
     })
   }
@@ -58,7 +59,7 @@ log = {} as logObj;
     })
   }
   signup(obj : userObj){
-    jQuery("#login").modal("show");
+    $("#login").modal("show");
     console.log("Navbar sending");
     this.dulUsers.signFun(obj).subscribe((back : any)=>{
     this.sign = false;
@@ -69,12 +70,10 @@ log = {} as logObj;
 
   }
   constructor(private dulClass : LogService, private dulUsers : UsersService) { }
-    ngOnInit() {
-   
-    if(!this.userLoggedIn){
+    ngOnInit() {  
     this.sign = false;
     this.otp = false;
-    jQuery("#login").modal('show');
-  }}
+    $("#login").modal('show');
+}
 
 }

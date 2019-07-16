@@ -7,8 +7,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 const routes: Routes = [
 {
 path : 'admin', redirectTo :'admin', pathMatch : 'full'
-},
-{
+},{
 path : '' , component : HomeComponent
 },{
 path : 'home' , component : HomeComponent
