@@ -18,6 +18,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { ImageComponent } from './component/image/image.component';
 import { Product2Component } from './component/product2/product2.component';
 import { SearchComponent } from './component/search/search.component';
+import { Product1Component } from './component/product1/product1.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SearchComponent } from './component/search/search.component';
     ProfileComponent,
     ImageComponent,
     Product2Component,
-    SearchComponent
+    SearchComponent,
+    Product1Component
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row m-1">
+    <div class="col-md-12">
+  
+        <div id="caro2" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#caro2" data-slide-to="0" class="active"></li>
+      <li data-target="#caro2" data-slide-to="1"></li>
+      <li data-target="#caro2" data-slide-to="2"></li>
+      <li data-target="#caro2" data-slide-to="3"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+      <div class="row">
+          <div class="col-md-2" *ngFor="let x of data">
+            <app-eachpro></app-eachpro>
+          </div>
+          <div class="carousel-caption jumbotron">
+              <h3 class="text-danger">Pesticides</h3>
+              <p class="text-danger">Scroll for More.. </p>
+            </div>
+      </div>
+      </div>
+      <div class="carousel-item">
+      <div class="row">
+          <div class="col-md-2" *ngFor="let x of data1">
+            <app-eachpro></app-eachpro>
+          </div>
+      </div>
+      </div>
+       <div class="carousel-item">
+      <div class="row">
+          <div class="col-md-2" *ngFor="let x of data2">
+            <app-eachpro></app-eachpro>
+          </div>
+      </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#caro2" data-slide="prev">
+     <button class="btn btn-secondary btn-lg"><span class="carousel-control-prev-icon"></span></button>
+    </a> 
+    <a class="carousel-control-next" href="#caro2" data-slide="next">
+      <button class="btn btn-secondary btn-lg"><span class="carousel-control-next-icon"></span></button>
+    </a>
+  </div>
+  </div>
+  </div>
