@@ -1,1 +1,20 @@
-<p>users works!</p>
+<table class="jumbotron" class="table-responsive-md table table-hover table-bordered table-dark table-centered">
+	<tr>
+		<th>S.No.</th>
+		<th>Contact</th>
+		<th>Email</th>
+		<th>Name</th>
+		<th>Age</th>
+		<th>OTP</th>
+		<th>Password</th>
+	</tr>
+	<tr *ngFor="let x of users, let i = index">
+		<td>{{i+1}}</td>
+		<td>{{x.contact}}</td>
+		<td>{{x.email}}</td>
+		<td>{{x.name}}</td>
+		<td>{{x.age}}</td>
+		<td>{{x.otpValue}}</td>
+		<td>{{x.newPassword}}</td>
+	</tr>
+</table>

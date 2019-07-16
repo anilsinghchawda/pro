@@ -1,1 +1,88 @@
-<p>product works!</p>
+<div id="proRefresh" class="container jumbotron">
+	<!-- enctype="multer, busboy, connect-busboy, formidable" -->
+	<form method="post" action="/product/" enctype="multipart/form-data" >
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" name="pro.proname" [(ngModel)]="pro.proname" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Ingrediant</label>
+			<input type="text" name="pro.ingrediant" [(ngModel)]="pro.ingrediant" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Image :</label>
+			<input type="file" name="pro.file" [(ngModel)]="pro.file" class="m-3">
+		</div>
+		<div class="form-group">
+			<label>Price</label>
+			<input type="text" name="pro.price" [(ngModel)]="pro.price" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Category</label>
+			<select class="form-control">
+				<option>Select</option>
+				<option *ngFor="let x of cate" name="pro.category" [(ngValue)]="pro.category">{{x.name}}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Company</label>
+			<input type="text" name="pro.company" [(ngModel)]="pro.company" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="season" type="checkbox" >Season (मौसम) :- </label>
+			<input id="season" type="checkbox" checked="" name="pro.season.rainy" [(ngModel)]="pro.season.rainy" class="m-2 ml-4">Rainy (बरसात)
+			<input id="season" type="checkbox" checked="checked" name="pro.season.winter" [(ngModel)]="pro.season.winter" class="m-2">Winter (सर्दी)
+			<input id="season" type="checkbox" checked="checked" name="pro.season.summer" [(ngModel)]="pro.season.summer" class="m-2">Summer (गर्मी)
+		</div>
+		<div class="form-group">
+			<label>Crops Type :-</label>
+			<input id="type" type="checkbox" checked="checked" name="pro.type.kharif" [(ngModel)]="pro.type.kharif" class="m-2 ml-4">Kharif
+			<input id="type" type="checkbox" checked="checked" name="pro.type.rabi" [(ngModel)]="pro.type.rabi" class="m-2">Rabi
+			<input id="type" type="checkbox" checked="checked" name="pro.type.other" [(ngModel)]="pro.type.other" class="m-2">Other
+</div>
+<div class="form-group ui checkbox toggle">
+			<label>Rabi Crops (October-March) :-</label>
+			<hr class="m-0">
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.wheat" [(ngModel)]="pro.rabi.wheat" class="m-2">Wheat (गेंहू)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.gram" [(ngModel)]="pro.rabi.gram" class="m-2">Gram (चना)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.onion" [(ngModel)]="pro.rabi.onion" class="m-2">Onion (प्याज)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.potato" [(ngModel)]="pro.rabi.potato" class="m-2">Potato (आलू)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.fenugreek" [(ngModel)]="pro.rabi.fenugreek" class="m-2">Fenugreek (मेंथी)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.peas" [(ngModel)]="pro.rabi.peas" class="m-2">Peas (मटर)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.tomato" [(ngModel)]="pro.rabi.tomato" class="m-2">Tomato (टमाटर)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.coriender" [(ngModel)]="pro.rabi.coriender" class="m-2">Coriender (धनिया)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.mustard" [(ngModel)]="pro.rabi.mustard" class="m-2">Mastard (सरसों)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.maiz" [(ngModel)]="pro.rabi.maiz" class="m-2">Maiz (अक्सर)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.lucerne" [(ngModel)]="pro.rabi.lucerne" class="m-2">Lucerne (लचका / बरसी)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.barley" [(ngModel)]="pro.rabi.barley" class="m-2">Barley (जौ)
+			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.fennel" [(ngModel)]="pro.rabi.fennel" class="m-2">Fennel (सौंफ)
+			<hr>
+			<hr>
+</div>
+			<div class="form-group">
+			<label>Kharif Crops (July–October):-</label>
+			<hr class="m-0">
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.soyabean" [(ngModel)]="pro.kharif.soyabean" class="m-2">Soyabean (सोयाबीन)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.groundnut" [(ngModel)]="pro.kharif.groundnut" class="m-2">Ground Nut (मूंगफली)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.paddy" [(ngModel)]="pro.kharif.paddy" class="m-2">Paddy (धान)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.gour" [(ngModel)]="pro.kharif.gour" class="m-2">Gour (ग्वार)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.castor" [(ngModel)]="pro.kharif.castor" class="m-2">Castor (रेंड़ी)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.cotton" [(ngModel)]="pro.kharif.cotton" class="m-2">Cotton (कपास)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.chilli" [(ngModel)]="pro.kharif.chilli" class="m-2">Chilli (मिर्च)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.jawar" [(ngModel)]="pro.kharif.jawar" class="m-2">Jawar (जवार)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.sesame" [(ngModel)]="pro.kharif.sesame" class="m-2">Sesame (तिल)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.maize" [(ngModel)]="pro.kharif.maize" class="m-2">Maize (मक्का)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.urad" [(ngModel)]="pro.kharif.urad" class="m-2">Urad (दफ्तर)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.bajra" [(ngModel)]="pro.kharif.bajra" class="m-2">Bajra (बाजरा)
+			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.arhar" [(ngModel)]="pro.kharif.arhar" class="m-2">Arhar (अरहर)
+			<hr>
+</div>
+		<div class="form-group">
+			<label>Rating</label>
+			<input type="text" checked="checked" name="pro.rating" [(ngModel)]="pro.rating" class="form-control">
+		</div>
+	</form>
+	<button class="btn btn-success" (click)="save(pro)">Add</button>
+</div>
+
+

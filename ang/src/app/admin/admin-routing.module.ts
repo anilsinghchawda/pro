@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { ViewproComponent } from './viewpro/viewpro.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { AdminnavComponent } from './adminnav/adminnav.component';
 import { CategoryComponent } from './category/category.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [{
-	path : 'admin', component : NavbarComponent, children : [
+	path : 'admin', component : AdminnavComponent, children : [
 	{
 			path : 'addproduct', component : ProductComponent
 

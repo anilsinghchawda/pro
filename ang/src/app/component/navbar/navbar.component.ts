@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../services/log.service';
 import * as bootstrap from "bootstrap";
+import * as jQuery from 'jquery';
 import * as $ from 'jquery';
 import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
@@ -46,7 +47,7 @@ log = {} as logObj;
       //   };
       // this.userLoggedIn=back.userLoggedIn;
       // this.userId=back._id;
-    jQuery("#login").modal("hide");
+    jQuery("#login").modal('hide');
     console.log("Login successfull");
     })
   }
@@ -73,7 +74,7 @@ log = {} as logObj;
     if(!this.userLoggedIn){
     this.sign = false;
     this.otp = false;
-    jQuery("#login").modal("show");
+    jQuery("#login").modal('show');
   }}
 
 }
