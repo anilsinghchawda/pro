@@ -11,13 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class CatnavComponent implements OnInit {
 
-public category:cateObj[];
+public cate:cateObj[];
 
   constructor(private dulClass : CategoryService) { }
 
   ngOnInit(){
   	this.dulClass.get().subscribe((cateStr : any)=>{
-  		this.category=cateStr;
+  		this.cate=cateStr;
   		console.log("Recieve on catnav", this.category);
 
   	});

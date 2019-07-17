@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -13,6 +15,8 @@ import { CategoryComponent } from './admin/category/category.component';
 import { ProductComponent } from './admin/product/product.component';
 import { UsersComponent } from './admin/users/users.component';
 import { ViewproComponent } from './admin/viewpro/viewpro.component';
+import { AdminnavComponent } from './admin/adminnav/adminnav.component';
+
 import { HomeComponent } from './component/home/home.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ImageComponent } from './component/image/image.component';
@@ -37,9 +41,11 @@ import { Product1Component } from './component/product1/product1.component';
     ImageComponent,
     Product2Component,
     SearchComponent,
-    Product1Component
+    Product1Component,
+    AdminnavComponent
   ],
   imports: [
+  AdminModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
