@@ -6,15 +6,19 @@
 </div>
 	<div class="form-group">
 		<label>Full Name</label>
-		<input type="text" [(ngModel)]="users.name" name="name" class="form-control">
+		<input type="text" [(ngModel)]="users.name" name="users.name" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Date of Birth</label>
-		<input type="date" [(ngModel)]="users.dob" name="dob" class="form-control">
+		<input type="date" [(ngModel)]="users.dob" name="users.dob" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Email</label>
-		<input type="text" [(ngModel)]="users.email" name="email" class="form-control">
+		<input type="text" [(ngModel)]="users.email" name="users.email" class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Contact</label>
+		<input type="text" [(ngModel)]="users.contact" name="users.contact" class="form-control">
 	</div>
 	<div class="form-group">
 		<button class="btn btn-success mr-4" type="submit" (click)="save(users)">Save</button>
