@@ -10,6 +10,11 @@ export class ProductService {
   public url = "http://localhost:3000/product";
   addPro(obj : any){
   	console.log("Service forwarding product", obj);
-    return this.http.post("http://localhost:3000/product", obj);
+    return this.http.post(this.url, obj);
+  }
+
+  getPro(){
+  	console.log(this.http.get(this.url));
+  	return this.http.get(this.url);
   }
 }

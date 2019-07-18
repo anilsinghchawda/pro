@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as jQuery from 'jquery';
+// import * as jQuery from 'jquery';
+// import * as $AB from 'jquery';
+
 import { cateStr } from '../models';
 import { CategoryService } from '../services/category.service';
 import { Observable } from 'rxjs';
@@ -17,7 +19,7 @@ export class CategoryComponent implements OnInit {
 		console.log("category.ts sending..", this.newCate.name);
 		this.dulClass.addCate(this.newCate).subscribe((info : any)=>{
 			console.log("respond on category.ts",info);
-			jQuery("#add").modal("hide");
+			$("#add").modal("hide");
 			this.cate.push(info);
 			// return this.cate=info;
 		})
@@ -36,7 +38,7 @@ export class CategoryComponent implements OnInit {
 			console.log("Deleted", index);
 			console.log("Deleted obj", info);
 			this.cate.splice(index, 1);
-			jQuery("#del").modal("hide")	
+			$("#del").modal("hide");	
 		})
 	}
   constructor(private dulClass : CategoryService) { }

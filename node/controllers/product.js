@@ -10,13 +10,21 @@ var path = require("path");
 routes.use(upload());
 routes.use(bodyParser());
 
-routes.get("/delete", function(req, res){
-		var id = new mongo.ObjectId(req.body._id);
-		console.log(id);
-		product.remove({_id : id}, function(err, result){
+// routes.get("/delete", function(req, res){
+// 		var id = new mongo.ObjectId(req.body._id);
+// 		console.log(id);
+// 		product.remove({_id : id}, function(err, result){
+// 			res.send(result);
+// 		})
+// 	});
+
+ routes.get("/", function(req, res){
+		product.find({}, function(err, result){
 			res.send(result);
 		})
 	});
+
+
 routes.post("/", function(req, res){
 	console.log("product added controllers say", req.body);
 	product.insert(req.body, function(err, result){

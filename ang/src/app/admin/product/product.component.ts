@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { cateStr } from '../models';
 import { proObj } from '../models';
-import * as jQuery from 'jquery';
+// import * as jQuery from 'jquery';
 import { seasonObj } from '../models';
 import { typeObj }  from '../models';
 import { rabiObj }  from '../models';
@@ -24,9 +24,11 @@ file:null,
 price:null,
 category:null,
 company:null,
-season:{rainy:null,
-winter:null,
-summer:null},
+season:{
+  rainy:null,
+  winter:null,
+  summer:null
+},
 type:{
 kharif:null,
 rabi:null,

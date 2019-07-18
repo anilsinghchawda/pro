@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../services/log.service';
-import * as bootstrap from "bootstrap";
-import * as jQuery from 'jquery';
-import * as $AB from 'jquery';
-// import * as $ from 'jquery';
+// import * as bootstrap from "bootstrap";
+// import * as jQuery from 'jquery';
+// import * as $AB from 'jquery';
+// // import * as $ from 'jquery';
 import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
 import { userObj } from '../models';
@@ -48,7 +48,7 @@ log = {} as logObj;
       //   };
       // this.userLoggedIn=back.userLoggedIn;
       // this.userId=back._id;
-    // jQuery("#login").modal('hide');
+    $("#login").modal('hide');
     console.log("Login successfull");
     })
   }
@@ -59,7 +59,7 @@ log = {} as logObj;
     })
   }
   signup(obj : userObj){
-    // jQuery("#login").modal("show");
+    $("#login").modal("show");
     console.log("Navbar sending");
     this.dulUsers.signFun(obj).subscribe((back : any)=>{
     this.sign = false;
@@ -73,7 +73,7 @@ log = {} as logObj;
     ngOnInit() {  
     this.sign = false;
     this.otp = false;
-    // jQuery("#login").modal('show');
+    $("#login").modal('show');
 }
 
 }

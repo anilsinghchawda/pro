@@ -18,7 +18,7 @@ public cate:cateObj[];
   ngOnInit(){
   	this.dulClass.get().subscribe((cateStr : any)=>{
   		this.cate=cateStr;
-  		console.log("Recieve on catnav", this.category);
+  		console.log("Recieve on catnav", this.cate);
 
   	});
   }

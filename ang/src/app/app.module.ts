@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
-import  { AdminModule } from './admin/admin.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
 
@@ -25,6 +23,8 @@ import { ImageComponent } from './component/image/image.component';
 import { Product2Component } from './component/product2/product2.component';
 import { SearchComponent } from './component/search/search.component';
 import { Product1Component } from './component/product1/product1.component';
+import * as bootstrap from "bootstrap";
+import * as $ from "jquery";
 
 @NgModule({
   declarations: [
@@ -47,7 +47,6 @@ import { Product1Component } from './component/product1/product1.component';
     AdminnavComponent
   ],
   imports: [
-  AdminModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

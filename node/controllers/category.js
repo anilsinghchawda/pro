@@ -19,7 +19,7 @@ routes.delete("/", function(req, res){
 routes.post("/", function(req, res){
 	console.log("Category added controllers", req.body);
 	category.insert(req.body, function(err, result){
-		res.send(result);
+		res.send(result.ops[0]);
 	})
 });
 module.exports=routes;
