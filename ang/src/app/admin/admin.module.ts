@@ -21,6 +21,6 @@ import { AdminnavComponent } from './adminnav/adminnav.component';
     FormsModule,
     HttpClientModule
   ],
-  bootstrap:[AdminRoutingModule]
+  bootstrap:[]
 })
 export class AdminModule { }

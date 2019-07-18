@@ -3,11 +3,11 @@ import { LogService } from '../services/log.service';
 import * as bootstrap from "bootstrap";
 import * as jQuery from 'jquery';
 import * as $AB from 'jquery';
+// import * as $ from 'jquery';
 import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
 import { userObj } from '../models';
 import { logObj } from '../models';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
