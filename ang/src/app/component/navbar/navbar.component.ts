@@ -48,7 +48,7 @@ log = {} as logObj;
       //   };
       // this.userLoggedIn=back.userLoggedIn;
       // this.userId=back._id;
-    $("#login").modal('hide');
+    // jQuery("#login").modal('hide');
     console.log("Login successfull");
     })
   }
@@ -59,7 +59,7 @@ log = {} as logObj;
     })
   }
   signup(obj : userObj){
-    $("#login").modal("show");
+    // jQuery("#login").modal("show");
     console.log("Navbar sending");
     this.dulUsers.signFun(obj).subscribe((back : any)=>{
     this.sign = false;
@@ -73,7 +73,7 @@ log = {} as logObj;
     ngOnInit() {  
     this.sign = false;
     this.otp = false;
-    $("#login").modal('show');
+    // jQuery("#login").modal('show');
 }
 
 }
