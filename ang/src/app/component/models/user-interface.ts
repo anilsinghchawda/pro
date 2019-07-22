@@ -22,3 +22,6 @@ export interface updateObj{
 	otpValue? :number;
 	newPassword? : string;
 }
+export interface checkLog{
+	userLoggedIn?:boolean;
+}

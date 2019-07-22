@@ -1,4 +1,4 @@
-  <div class="container-fluid p-0">
+ <div class="container-fluid p-0">
     <div class="row">
       <div class="col-md-4 border border-dark text-center">
         <p class="m-1"><small><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> FREE SHIPPING ON ALL ORDERS</small></p>
@@ -45,10 +45,10 @@
       </div> </li>
       </ul>
     <ul class="navbar-nav ml-auto">  
-      <li class="nav-item ml-auto" *ngIf="!userLoggedIn">
+      <li class="nav-item ml-auto" *ngIf="!LoggedIn">
         <a href="#" class="nav-link mx-3 text-light" data-toggle="modal" data-target="#login" (click)="empty() * logcheck()">Login</a>
       </li>
-     <li class="nav-item" *ngIf="userLoggedIn">
+     <li class="nav-item" *ngIf="LoggedIn">
         <div class="dropdown ">
        <button type="button" class="btn btn-outline-light dropdown-toggle mx-3" data-toggle="dropdown">My Account</button>
     <div class="dropdown-menu">
@@ -58,7 +58,7 @@
       </div> 
     </li>
       <li class="nav-item ml-auto">
-        <a routerLink="cart" routerLinkActive="active-link" class="nav-link mx-3 text-light">{{userLoggedIn?"My Cart":"Cart"}}</a>
+        <a routerLink="cart" routerLinkActive="active-link" class="nav-link mx-3 text-light">{{LoggedIn?"My Cart":"Cart"}}</a>
       </li>
     </ul>
   </div>  
@@ -74,7 +74,10 @@
               <form #obj="ngForm" ngNativeValidate >
               <div class="form-group" [class.has-error]="contactControl.invalid && contactControl.touched">
                 <label >Mobile Number/Email Id</label>
-                 <input type="text" required [(ngModel)]="users.contact" name="users.contact" class="form-control" #contactControl="ngModel" placeholder="Mobile OR Email">
+                 <input type="text" required [ngClass]="{'Invalid-text':obj.submitted && !email.valid}" [(ngModel)]="users.contact" name="users.contact" class="form-control" #contactControl="ngModel" placeholder="Mobile OR Email">
+                 <div *ngIf="obj.submitted && email.error?.pattern">
+                   <label class="validation-message">Invalid email address</label>
+                 </div>
                  <span class="help-block text-danger m-1" *ngIf="contactControl.invalid && contactControl.touched">Invalid number</span>
                 </div>
                 <div class="form-group">

@@ -9,6 +9,7 @@ var cache = require("nocache");
 var upload = require("express-fileupload");
 var fileUpload  = require("file-upload");
 var random = require("randomstring");
+var mongo  = require("mongodb");
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

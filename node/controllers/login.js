@@ -22,7 +22,9 @@ routes.post("/", function(req, res){
 			req.session.name=result[0].name;
 			req.session.userLoggedIn=true;
 			console.log("Login successfull with id", req.session);
-			res.send(req.session);
+			var sessionObj=req.session;
+			console.log("Controller sending", sessionObj)
+			res.send(sessionObj);
 		}else{
 
 		}
@@ -31,10 +33,11 @@ routes.post("/", function(req, res){
 	}
 	})
 });
+
 routes.get("/", function(req, res){
 	req.session.destroy();
 	console.log("logout successfully", req.session);
-	res.send(false);
+	res.send(req.session);
 });
 
 module.exports=routes;

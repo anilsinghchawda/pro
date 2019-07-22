@@ -10,8 +10,8 @@ routes.get("/", function(req, res){
 })
 });
 routes.delete("/", function(req, res){
-		var id = mongo.ObjectId(id);
-		console.log("The ID recieve at category component is ",id);
+		var id = mongo.ObjectId(req.body._id);
+		console.log("The ID recieve at category controller is ",id);
 		category.remove({_id : id}, function(err, result){
 			res.send(result);
 		})

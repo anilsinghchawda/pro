@@ -13,9 +13,13 @@ logFun(obj : logObj){
  console.log("service posting obj for login", obj);
  return this.http.post(this.url, obj); 
 }
+checkLog(){
+	return this.http.get("http://localhost:3000/check");
+}
 logoutFun(){
 	console.log("service function called");
 	return this.http.get(this.url);
 }
+
   constructor(private http : HttpClient ) { }
 }

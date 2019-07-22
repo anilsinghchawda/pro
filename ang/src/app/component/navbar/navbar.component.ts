@@ -8,6 +8,7 @@ import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
 import { userObj } from '../models';
 import { logObj } from '../models';
+import { checkLog } from '../models';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -32,30 +33,31 @@ log = {} as logObj;
   	this.sign=false;
     this.otp = false;
   }
-  public userLoggedIn:boolean;
+  public LoggedIn:any;
+  public userSession:any;
   public userId:string;
-  public username = "Anil Singh";
-  login(obj : logObj):void{
+  public temp:any;
+
+
+  login(obj : logObj):Observable<any>{
     console.log("....................", obj);
     obj.contact = this.users.contact;
     this.dulClass.logFun(obj).subscribe((back : any)=>{
       console.log(back.userLoggedIn);
+      this.temp=back;
+      console.log(this.temp);
+    this.LoggedIn=back.userLoggedIn;
       console.log(back._id);
-      this.userLoggedIn=back.userLoggedIn;
-      // this.userLoggedIn=new Observable<boolean> 
-      //   observe=>{
-      //     back.userLoggedIn;
-      //   };
-      // this.userLoggedIn=back.userLoggedIn;
-      // this.userId=back._id;
     $("#login").modal('hide');
     console.log("Login successfull");
-    })
+     })
+    return this.temp;
   }
+
   logout(){
     this.dulClass.logoutFun().subscribe((back : any)=>{
       console.log(back);
-     return this.userLoggedIn=back;
+     return this.LoggedIn=back;
     })
   }
   signup(obj : userObj){
@@ -70,10 +72,22 @@ log = {} as logObj;
 
   }
   constructor(private dulClass : LogService, private dulUsers : UsersService) { }
-    ngOnInit() {  
+    ngOnInit() { 
+    this.dulClass.checkLog().subscribe((back:any)=>{
+      if(back){
+     return this.LoggedIn=back.userLoggedIn;
+      }else{
+        this.LoggedIn=false;
+      }
+    })
+
+    if(this.temp.userLoggedIn){
+      console.log("Id check", this.LoggedIn);
+    $("#login").modal('hide');
+    }else{
     this.sign = false;
     this.otp = false;
     $("#login").modal('show');
 }
-
+}
 }

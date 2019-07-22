@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import * as jQuery from 'jquery';
 // import * as $AB from 'jquery';
-
 import { cateStr } from '../models';
 import { CategoryService } from '../services/category.service';
 import { Observable } from 'rxjs';
