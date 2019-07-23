@@ -5,9 +5,9 @@ export interface userObj{
 	name?  : string;
 	dob? : number;
 	email? : string;
-	contact : number;
-	otpValue :number;
-	newPassword : string;
+	contact? : number;
+	otpValue? :number;
+	newPassword? : string;
 
 }
 export interface logObj{

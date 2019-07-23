@@ -20,6 +20,7 @@
     "mongodb": "^3.2.7",
     "nocache": "^2.1.0",
     "randomstring": "^1.1.5",
+    "sendotp": "^1.2.9",
     "sha1": "^1.1.1",
     "twilio": "^3.32.0"
   }

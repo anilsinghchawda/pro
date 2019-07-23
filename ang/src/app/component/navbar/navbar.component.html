@@ -67,7 +67,7 @@
 <div id="login" class="modal fade active">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header">  
                <h3 class="font-weight-bold text-info col-12 text-center">{{sign?"SignUp":"Login"}}</h3>
             </div>
             <div class="modal-body">
@@ -81,7 +81,7 @@
                  <span class="help-block text-danger m-1" *ngIf="contactControl.invalid && contactControl.touched">Invalid number</span>
                 </div>
                 <div class="form-group">
-                  <button *ngIf="sign" class="btn btn-success" (click)="otpCheck()">Continue</button>
+                  <button *ngIf="sign" class="btn btn-success" routerActive="active" (click)="otpCheck(users)">Continue</button>
                 </div>
                 <div *ngIf="otp" class="form-group">
                 <label>Enter OTP</label>

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../services/log.service';
-// import * as bootstrap from "bootstrap";
-// import * as jQuery from 'jquery';
-// import * as $AB from 'jquery';
-// // import * as $ from 'jquery';
+import * as bootstrap from "bootstrap";
+import * as jQuery from 'jquery';
+import * as $AB from 'jquery';
+import * as $ from 'jquery';
 import { UsersService } from '../services/users.service';
+import { OtpService } from '../services/otp.service';
 import { Observable } from 'rxjs';
 import { userObj } from '../models';
 import { logObj } from '../models';
@@ -26,8 +27,10 @@ log = {} as logObj;
   signcheck(){
   	this.sign=true;
   }
-  otpCheck(){
+  otpCheck(users : userObj){
+    this.otpClass.sendOtp(users).subscribe((sended : any)=>{
     this.otp = true;
+    })
   }
   logcheck(){
   	this.sign=false;
@@ -71,7 +74,7 @@ log = {} as logObj;
   })
 
   }
-  constructor(private dulClass : LogService, private dulUsers : UsersService) { }
+  constructor(private dulClass : LogService, private dulUsers : UsersService, private otpClass : OtpService) { }
     ngOnInit() { 
     this.dulClass.checkLog().subscribe((back:any)=>{
       if(back){
@@ -80,14 +83,14 @@ log = {} as logObj;
         this.LoggedIn=false;
       }
     })
-
+    
     if(this.temp.userLoggedIn){
       console.log("Id check", this.LoggedIn);
     $("#login").modal('hide');
     }else{
     this.sign = false;
     this.otp = false;
-    $("#login").modal('show');
+   $("#login").modal('show');
 }
 }
 }
