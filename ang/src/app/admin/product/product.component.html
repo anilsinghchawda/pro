@@ -1,6 +1,7 @@
-<div id="proRefresh" class="container jumbotron">
 	<!-- enctype="multer, busboy, connect-busboy, formidable" -->
-	<form method="post" action="/product/" enctype="multipart/form-data" >
+
+<!-- <div id="proRefresh" class="container jumbotron">
+	<form action="/product/" method="post" enctype="multipart/form-data" >
 		<div class="form-group">
 			<label>Name</label>
 			<input type="text" name="pro.proname" [(ngModel)]="pro.proname" class="form-control">
@@ -30,16 +31,18 @@
 		</div>
 		<div class="form-group">
 			<label for="season" type="checkbox" >Season (मौसम) :- </label>
-			<input id="season" type="checkbox" checked="" name="pro.season.rainy" [(ngModel)]="pro.season.rainy" class="m-2 ml-4">Rainy (बरसात)
+			<input id="season" type="checkbox" checked="checked" name="pro.season.rainy" [(ngModel)]="pro.season.rainy" class="m-2 ml-4">Rainy (बरसात)
 			<input id="season" type="checkbox" checked="checked" name="pro.season.winter" [(ngModel)]="pro.season.winter" class="m-2">Winter (सर्दी)
 			<input id="season" type="checkbox" checked="checked" name="pro.season.summer" [(ngModel)]="pro.season.summer" class="m-2">Summer (गर्मी)
+			<button class="btn btn-secondary btn-sm m-2" (click)="allSeason()">Select All</button>
 		</div>
 		<div class="form-group">
 			<label>Crops Type :-</label>
 			<input id="type" type="checkbox" checked="checked" name="pro.type.kharif" [(ngModel)]="pro.type.kharif" class="m-2 ml-4">Kharif
 			<input id="type" type="checkbox" checked="checked" name="pro.type.rabi" [(ngModel)]="pro.type.rabi" class="m-2">Rabi
 			<input id="type" type="checkbox" checked="checked" name="pro.type.other" [(ngModel)]="pro.type.other" class="m-2">Other
-</div>
+			<button class="btn btn-secondary btn-sm m-2" (click)="allType()">Select All</button>
+		</div>
 <div class="form-group ui checkbox toggle">
 			<label>Rabi Crops (October-March) :-</label>
 			<hr class="m-0">
@@ -56,6 +59,7 @@
 			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.lucerne" [(ngModel)]="pro.rabi.lucerne" class="m-2">Lucerne (लचका / बरसी)
 			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.barley" [(ngModel)]="pro.rabi.barley" class="m-2">Barley (जौ)
 			<input id="rabi" type="checkbox" checked="checked" name="pro.rabi.fennel" [(ngModel)]="pro.rabi.fennel" class="m-2">Fennel (सौंफ)
+			<button class="btn btn-secondary btn-sm m-2" (click)="allRabi()">Select All</button>
 			<hr>
 			<hr>
 </div>
@@ -75,6 +79,7 @@
 			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.urad" [(ngModel)]="pro.kharif.urad" class="m-2">Urad (दफ्तर)
 			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.bajra" [(ngModel)]="pro.kharif.bajra" class="m-2">Bajra (बाजरा)
 			<input id="kharif" type="checkbox" checked="checked" name="pro.kharif.arhar" [(ngModel)]="pro.kharif.arhar" class="m-2">Arhar (अरहर)
+			<button class="btn btn-secondary btn-sm m-2" (click)="allKharif()">Select All</button>
 			<hr>
 </div>
 		<div class="form-group">
@@ -83,6 +88,6 @@
 		</div>
 	</form>
 	<button class="btn btn-success" (click)="save(pro)">Add</button>
-</div>
+</div> -->
 
-
+<button class="btn btn-danger" (click)='open()'>Add New Product</button>

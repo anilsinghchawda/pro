@@ -7,10 +7,12 @@ var session = require("express-session");
 var flash = require("express-flash");
 var cache = require("nocache");
 var upload = require("express-fileupload");
+var multer = require("multer");
 var fileUpload  = require("file-upload");
 var random = require("randomstring");
 var mongo  = require("mongodb");
 
+app.set('view engine', 'ejs');
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

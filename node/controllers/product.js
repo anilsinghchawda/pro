@@ -3,11 +3,12 @@ var routes = express.Router();
 var product = require("../models/product");
 var mongo  = require("mongodb");
 var upload = require("express-fileupload");
-var upload1 = require("file-upload");
+var upload = require("file-upload");
 var random = require("randomstring");
 var bodyParser = require("body-parser");
 var path = require("path");
-routes.use(upload());
+var multer = require("multer");
+
 routes.use(bodyParser());
 
 // routes.get("/delete", function(req, res){
@@ -23,14 +24,15 @@ routes.use(bodyParser());
 			res.send(result);
 		})
 	});
-
+ 
 
 routes.post("/", function(req, res){
-	console.log("product added controllers say", req.body);
-	product.insert(req.body, function(err, result){
-		res.send(result.ops[0]);
+	console.log(req.files)
+	// console.log("product added controllers say", req.body);
+	// product.insert(req.body, function(err, result){
+	// 	res.send(result.ops[0]);
 		
-	});
+	// });
 	// var fileObj = req.files.file;
 	// var name = fileObj.name;
 	// var size = fileObj.size;

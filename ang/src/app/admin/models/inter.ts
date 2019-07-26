@@ -7,44 +7,44 @@ export interface userObj{
 	password : string;
 }
 export interface seasonObj{
-	rainy?:string;
-	winter?:string;
-	summer?:string;
+	rainy?:boolean;
+	winter?:boolean;
+	summer?:boolean;
 }
 export interface typeObj{
-	kharif?:string;
-	rabi?:string;
-	other?:string;
+	kharif?:boolean;
+	rabi?:boolean;
+	other?:boolean;
 }
 export interface rabiObj{
-wheat:string;
-gram:string;
-onion:string;
-potato:string;
-fenugreek:string;
-peas:string;
-tomato:string;
-coriender:string;
-mustard:string;
-maiz:string;
-lucerne:string;
-barley:string;
-fennel:string;
+wheat:boolean;
+gram:boolean;
+onion:boolean;
+potato:boolean;
+fenugreek:boolean;
+peas:boolean;
+tomato:boolean;
+coriender:boolean;
+mustard:boolean;
+maiz:boolean;
+lucerne:boolean;
+barley:boolean;
+fennel:boolean;
 }
 export interface kharifObj{
-soyabean:string;
-groundnut:string;
-paddy:string;
-gour:string;
-castor:string;
-cotton:string;
-chilli:string;
-jawar:string;
-sesame:string;
-maize:string;
-urad:string;
-bajra:string;
-arhar:string;
+soyabean:boolean;
+groundnut:boolean;
+paddy:boolean;
+gour:boolean;
+castor:boolean;
+cotton:boolean;
+chilli:boolean;
+jawar:boolean;
+sesame:boolean;
+maize:boolean;
+urad:boolean;
+bajra:boolean;
+arhar:boolean;
 }
 export interface proObj{
 proname?:string;

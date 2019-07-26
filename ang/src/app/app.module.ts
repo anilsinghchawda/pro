@@ -12,7 +12,7 @@ import { ArrivalComponent } from './component/arrival/arrival.component';
 import { CatnavComponent } from './component/catnav/catnav.component';
 import { EachproComponent } from './component/eachpro/eachpro.component';
 import { CategoryComponent } from './admin/category/category.component';
-import { ProductComponent } from './admin/product/product.component';
+// import { ProductComponent } from './admin/product/product.component';
 import { UsersComponent } from './admin/users/users.component';
 import { ViewproComponent } from './admin/viewpro/viewpro.component';
 import { AdminnavComponent } from './admin/adminnav/adminnav.component';
@@ -35,7 +35,7 @@ import * as $ from "jquery";
     CatnavComponent,
     EachproComponent,
     CategoryComponent,
-    ProductComponent,
+    // ProductComponent,
     UsersComponent,
     ViewproComponent,
     HomeComponent,
