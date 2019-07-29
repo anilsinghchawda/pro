@@ -5,14 +5,18 @@ var category = require("../models/category");
 var upload = require("express-fileupload");
 var random = require("randomstring");
 var flash = require("express-flash");
+var bodyParser=require("body-parser");
 var path = require("path");
+
 routes.use(flash());
+routes.use(upload());
+routes.use(bodyParser());
 
 routes.get("/", function(req,res){
 	category.find({}, function(err, result){
 
 	var pagedata = { name : "addproduct", result : result, message : req.flash("msg")};
-	res.render("", pagedata);
+	res.render("addPro", pagedata);
 	});
 });
 routes.post("/", function(req, res){
@@ -31,20 +35,22 @@ routes.post("/", function(req, res){
 			var rand_string = random.generate(21);
 
 			var newname = rand_string + "." + ext;
-			fileObj.mv(path.resolve()+ "/public/product/" + newname, function(err){
+			fileObj.mv(path.resolve()+ "/public/medicine/" + newname, function(err){
 				req.body.price=parseInt(req.body.price);
 				req.body.discount=parseInt(req.body.discount);
-				res.redirect("/admin/addproduct");
-			})
+			product.insert(req.body, function(err, result){
+				res.redirect("/addPro");
+			});
+		});
 		}else{
 			req.flash("msg", "File size is too long...")
+			res.redirect("/addPro");
+
 		}
 	}else{
 		req.flash("msg", "This type of file is not supported try jpg, jpeg, png, gif..")
-	}
+		res.redirect("/addPro");
 
-	product.insert(req.body, function(err, result){
-		res.redirect("/admin/addproduct");
-	});
+	}
 });
 module.exports=routes;

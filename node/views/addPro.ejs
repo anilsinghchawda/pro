@@ -1,0 +1,94 @@
+<!-- <link rel="stylesheet" type="text/css" href="/css/final.css"> -->
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+  <!-- <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>   -->
+
+
+<div class="container jumbotron">
+	<form action="/addPro" method="post" enctype="multipart/form-data" >
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" name="proname" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Ingrediant</label>
+			<input type="text" name="ingrediant" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Image :</label>
+			<input type="file" name="image" class="m-3">
+		</div>
+		<div class="form-group">
+			<label>Price</label>
+			<input type="text" name="price" class="form-control">
+		</div>
+		<div class="form-group">
+            <label>Category</label>
+        <select name="category" class="form-control">
+            <option >Select</option>
+                <% result.forEach(function(x){ %>
+                    <option class="form-control" ><%= x.name %></option>
+                <% }) %>
+        </select>
+        </div>
+		<div class="form-group">
+			<label>Company</label>
+			<input type="text" name="company" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Season (मौसम) :- </label>
+			<input id="season" type="checkbox" value="true" name="season.rainy" class="m-2 ml-4">Rainy (बरसात)
+			<input id="season" type="checkbox" value="true" name="season.winter"  class="m-2">Winter (सर्दी)
+			<input id="season" type="checkbox" value="true" name="season.summer"  class="m-2">Summer (गर्मी)
+		</div>
+		<div class="form-group">
+			<label>Crops Type :-</label>
+			<input id="type" type="checkbox" value="true" name="type.kharif" class="m-2 ml-4">Kharif
+			<input id="type" type="checkbox" value="true" name="type.rabi"  class="m-2">Rabi
+			<input id="type" type="checkbox" value="true" name="type.other" class="m-2">Other
+		</div>
+<div class="form-group"  value="true">
+			<label>Rabi Crops (October-March) :-</label>
+			<hr class="m-0">
+			<input id="rabi" type="checkbox" value="true" name="rabi.wheat" class="m-2">Wheat (गेंहू)
+			<input id="rabi" type="checkbox" value="true" name="rabi.gram"  class="m-2">Gram (चना)
+			<input id="rabi" type="checkbox" value="true" name="rabi.onion"  class="m-2">Onion (प्याज)
+			<input id="rabi" type="checkbox" value="true" name="rabi.potato"  class="m-2">Potato (आलू)
+			<input id="rabi" type="checkbox" value="true" name="rabi.fenugreek"  class="m-2">Fenugreek (मेंथी)
+			<input id="rabi" type="checkbox" value="true" name="rabi.peas"  class="m-2">Peas (मटर)
+			<input id="rabi" type="checkbox" value="true" name="rabi.tomato"  class="m-2">Tomato (टमाटर)
+			<input id="rabi" type="checkbox" value="true" name="rabi.coriender"  class="m-2">Coriender (धनिया)
+			<input id="rabi" type="checkbox" value="true" name="rabi.mustard"  class="m-2">Mastard (सरसों)
+			<input id="rabi" type="checkbox" value="true" name="rabi.maiz" class="m-2">Maiz (अक्सर)
+			<input id="rabi" type="checkbox" value="true" name="rabi.lucerne"  class="m-2">Lucerne (लचका / बरसी)
+			<input id="rabi" type="checkbox" value="true" name="rabi.barley"  class="m-2">Barley (जौ)
+			<input id="rabi" type="checkbox" value="true" name="rabi.fennel"  class="m-2">Fennel (सौंफ)
+			<hr>
+			<hr>
+</div>
+			<div class="form-group">
+			<label>Kharif Crops (July–October):-</label>
+			<hr class="m-0">
+			<input id="kharif" type="checkbox" value="true" name="kharif.soyabean"  class="m-2">Soyabean (सोयाबीन)
+			<input id="kharif" type="checkbox" value="true" name="kharif.groundnut" class="m-2">Ground Nut (मूंगफली)
+			<input id="kharif" type="checkbox" value="true" name="kharif.paddy"  class="m-2">Paddy (धान)
+			<input id="kharif" type="checkbox" value="true" name="kharif.gour" class="m-2">Gour (ग्वार)
+			<input id="kharif" type="checkbox" value="true" name="kharif.castor"  class="m-2">Castor (रेंड़ी)
+			<input id="kharif" type="checkbox" value="true" name="kharif.cotton"  class="m-2">Cotton (कपास)
+			<input id="kharif" type="checkbox" value="true" name="kharif.chilli"  class="m-2">Chilli (मिर्च)
+			<input id="kharif" type="checkbox" value="true" name="kharif.jawar"  class="m-2">Jawar (जवार)
+			<input id="kharif" type="checkbox" value="true" name="kharif.sesame"  class="m-2">Sesame (तिल)
+			<input id="kharif" type="checkbox" value="true" name="kharif.maize"  class="m-2">Maize (मक्का)
+			<input id="kharif" type="checkbox" value="true" name="kharif.urad" class="m-2">Urad (दफ्तर)
+			<input id="kharif" type="checkbox" value="true" name="kharif.bajra"  class="m-2">Bajra (बाजरा)
+			<input id="kharif" type="checkbox" value="true" name="kharif.arhar"  class="m-2">Arhar (अरहर)
+			<hr>
+</div>
+		<div class="form-group">
+			<label>Rating</label>
+			<input type="text" name="rating"  class="form-control">
+		</div>
+	<button class="btn btn-success" type="submit" value="upload">Add</button>
+	</form>
+</div>
