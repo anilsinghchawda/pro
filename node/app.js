@@ -31,5 +31,5 @@ app.use(upload());
 
 var port = process.env.PORT || 3000;
 app.listen(3000, function(){
-	console.log("Server Running for uang on port", port);
+	console.log("Server Running for Pro on port", port);
 });
