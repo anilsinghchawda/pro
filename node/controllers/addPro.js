@@ -11,8 +11,8 @@ routes.use(flash());
 routes.get("/", function(req,res){
 	category.find({}, function(err, result){
 
-	var pagedata = { name : "addproduct", result : result, message : req.flash("msg")};
-	res.render("", pagedata);
+	var pagedata = { result : result, message : req.flash("msg")};
+	res.render("addPro", pagedata);
 	});
 });
 routes.post("/", function(req, res){
@@ -44,7 +44,7 @@ routes.post("/", function(req, res){
 	}
 
 	product.insert(req.body, function(err, result){
-		res.redirect("/admin/addproduct");
+		res.redirect("/addPro");
 	});
 });
 module.exports=routes;

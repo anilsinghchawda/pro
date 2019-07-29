@@ -23,6 +23,9 @@ export class CategoryComponent implements OnInit {
 			// return this.cate=info;
 		})
 	}
+	emptied(){
+		this.newCate.name=null;
+	}
 	askDel(a:cateStr){
 		this.cateObj=a;
 	}

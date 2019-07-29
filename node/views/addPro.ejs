@@ -6,7 +6,7 @@
 
 
 <div class="container jumbotron">
-	<form action="/product/" method="post" enctype="multipart/form-data" >
+	<form action="/addPro/" method="post" enctype="multipart/form-data" >
 		<div class="form-group">
 			<label>Name</label>
 			<input type="text" name="proname" class="form-control">
@@ -17,7 +17,7 @@
 		</div>
 		<div class="form-group">
 			<label>Image :</label>
-			<input type="file" name="file" class="m-3">
+			<input type="file" name="image" class="m-3">
 		</div>
 		<div class="form-group">
 			<label>Price</label>
@@ -91,5 +91,5 @@
 			<input type="text" name="rating"  class="form-control">
 		</div>
 	</form>
-	<button class="btn btn-success" (click)="save(pro)">Add</button>
+	<button class="btn btn-success" type="submit" value="upload">Add <span class="spinner-border spinner-border-sm"></span></button>
 </div>
