@@ -14,12 +14,7 @@ routes.use(bodyParser());
 
 routes.get("/", function(req,res){
 	category.find({}, function(err, result){
-
-<<<<<<< HEAD
 	var pagedata = { result : result, message : req.flash("msg")};
-=======
-	var pagedata = { name : "addproduct", result : result, message : req.flash("msg")};
->>>>>>> 02a9c7144cab7bd6e2cd3a78fc2eb2b42e2fe1f3
 	res.render("addPro", pagedata);
 	});
 });
@@ -42,7 +37,7 @@ routes.post("/", function(req, res){
 			fileObj.mv(path.resolve()+ "/public/medicine/" + newname, function(err){
 				req.body.price=parseInt(req.body.price);
 				req.body.discount=parseInt(req.body.discount);
-			product.insert(req.body, function(err, result){
+				product.insert(req.body, function(err, result){
 				res.redirect("/addPro");
 			});
 		});
@@ -54,13 +49,6 @@ routes.post("/", function(req, res){
 	}else{
 		req.flash("msg", "This type of file is not supported try jpg, jpeg, png, gif..")
 		res.redirect("/addPro");
-
-<<<<<<< HEAD
-	product.insert(req.body, function(err, result){
-		res.redirect("/addPro");
-	});
-=======
 	}
->>>>>>> 02a9c7144cab7bd6e2cd3a78fc2eb2b42e2fe1f3
 });
 module.exports=routes;
