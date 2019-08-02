@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../services/log.service';
-import * as bootstrap from "bootstrap";
-import * as jQuery from 'jquery';
-import * as $AB from 'jquery';
-import * as $ from 'jquery';
+// import * as bootstrap from "bootstrap";
+// import * as jQuery from 'jquery';
+// import * as $AB from 'jquery';
+// import * as $ from 'jquery';
 import { UsersService } from '../services/users.service';
 import { OtpService } from '../services/otp.service';
 import { Observable } from 'rxjs';

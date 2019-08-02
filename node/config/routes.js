@@ -2,7 +2,7 @@ var express = require("express");
 var routes = express.Router();
 
 
-routes.use("/", require("../controllers/login"));
+routes.use("/login", require("../controllers/login"));
 routes.use("/check", require("../controllers/check"));
 routes.use("/addPro", require("../controllers/addPro"));
 

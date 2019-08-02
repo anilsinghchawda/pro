@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class LogService {
-public url = "http://localhost:3000";
+public url = "http://localhost:3000/login";
 
 logFun(obj : logObj){
  console.log("service posting obj for login", obj);
