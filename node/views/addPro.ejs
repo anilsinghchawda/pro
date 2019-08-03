@@ -2,8 +2,10 @@
 
 <div class="container jumbotron">
 	<div class="row">
-		<div class="col-md-12 justify-content-center">Add New Product</div>
+		<div class="col-md-12">
+		<h2 class="d-flex justify-content-center text-danger">Add New Product</h2>
 	</div>
+</div>
 	<form action="/addPro/" method="post" enctype="multipart/form-data" >
 		<div class="form-group">
 			<label>Name</label>
@@ -92,5 +94,6 @@
 			<input type="text" name="rating"  class="form-control">
 		</div>
 	<button class="btn btn-success" type="submit" value="upload">Add <span class="spinner-border spinner-border-sm"></span></button>
+	<p class="text-danger"><%= message %></p>
 	</form>
 </div>

@@ -5,9 +5,11 @@ var category = require("../models/category");
 var upload = require("express-fileupload");
 var random = require("randomstring");
 var flash = require("express-flash");
+var session = require("express-session");
 var bodyParser=require("body-parser");
 var path = require("path");
 
+routes.use(session({secret:"anil"}));
 routes.use(flash());
 routes.use(upload());
 routes.use(bodyParser());
@@ -24,8 +26,8 @@ routes.post("/", function(req, res){
 	var fileObj = req.files.image;
 	var name = fileObj.name;
 	var size = fileObj.size;
-
 	var arr = name.split(".");
+
 	var n = arr.length;
 	var ext = arr[n-1];
 
