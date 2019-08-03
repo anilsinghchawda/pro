@@ -7,14 +7,19 @@
       <li data-target="#caro2" data-slide-to="0" class="active"></li>
       <li data-target="#caro2" data-slide-to="1"></li>
       <li data-target="#caro2" data-slide-to="2"></li>
-      <li data-target="#caro2" data-slide-to="3"></li>
     </ul>
     <div class="carousel-inner">
       <div class="carousel-item active">
       <div class="row">
           <div class="col-md-2" *ngFor="let x of data">
-            <app-eachpro></app-eachpro>
-          </div>
+             <div class="card m-3 product" >
+        <div class="card-body">
+          <div class="card-header" src="x.image" ></div>
+          <div class="card-footer"><p>{{x.proname}}</p></div>
+        </div>
+      </div>
+      
+        </div>
           <div class="carousel-caption jumbotron">
               <h3 class="text-danger">Pesticides</h3>
               <p class="text-danger">Scroll for More.. </p>
