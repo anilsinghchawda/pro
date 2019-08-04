@@ -24,12 +24,12 @@ routes.post("/", function(req, res){
 	console.log(req.body);
 	console.log(req.files);
 	var fileObj = req.files.image;
+
 	var name = fileObj.name;
 	var size = fileObj.size;
-	var arr = name.split(".");
 
-	var n = arr.length;
-	var ext = arr[n-1];
+	var arr = name.split(".");
+	var ext = arr[arr.length-1];
 
 	if (ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "gif" || ext == "bmp"){
 		if(size <= 1024*1024){
