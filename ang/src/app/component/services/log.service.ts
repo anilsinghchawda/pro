@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { logObj } from '../models';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http'
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +17,7 @@ checkLog(){
 }
 logoutFun(){
 	console.log("service function called");
-	return this.http.get(this.url);
+	return this.http.get('http://localhost:3000/login/logout');
 }
 
   constructor(private http : HttpClient ) { }

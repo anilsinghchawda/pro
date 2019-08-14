@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../services/log.service';
-// import * as bootstrap from "bootstrap";
-// import * as jQuery from 'jquery';
-// import * as $AB from 'jquery';
+import * as bootstrap from "bootstrap";
+import * as jQuery from 'jquery';
+import * as $AB from 'jquery';
 // import * as $ from 'jquery';
 import { UsersService } from '../services/users.service';
 import { OtpService } from '../services/otp.service';
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { userObj } from '../models';
 import { logObj } from '../models';
 import { checkLog } from '../models';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -28,9 +29,9 @@ log = {} as logObj;
   	this.sign=true;
   }
   otpCheck(users : userObj){
-    this.otpClass.sendOtp(users).subscribe((sended : any)=>{
+    // this.otpClass.sendOtp(users).subscribe((sended : any)=>{})
     this.otp = true;
-    })
+  
   }
   logcheck(){
   	this.sign=false;
@@ -47,10 +48,10 @@ log = {} as logObj;
     obj.contact = this.users.contact;
     this.dulClass.logFun(obj).subscribe((back : any)=>{
       console.log(back.userLoggedIn);
-      this.temp=back;
-      console.log(this.temp);
-    this.LoggedIn=back.userLoggedIn;
       console.log(back._id);
+      // this.temp=back;
+      console.log(this.temp);
+      this.LoggedIn=back;
     $("#login").modal('hide');
     console.log("Login successfull");
      })
@@ -76,21 +77,27 @@ log = {} as logObj;
   }
   constructor(private dulClass : LogService, private dulUsers : UsersService, private otpClass : OtpService) { }
     ngOnInit() { 
+
     this.dulClass.checkLog().subscribe((back:any)=>{
+      console.log("checklog function is checking for sessssiooonnnn..")
       if(back){
-     return this.LoggedIn=back.userLoggedIn;
+        console.log("session found..");
+       $("#login").modal('hide');
+       return this.LoggedIn=back;
       }else{
-        this.LoggedIn=false;
+        this.LoggedIn=null;
+        this.sign = false;
+        this.otp = false;
+       $("#login").modal('show');
       }
     })
     
-    if(this.temp.userLoggedIn){
-      console.log("Id check", this.LoggedIn);
-    $("#login").modal('hide');
-    }else{
-    this.sign = false;
-    this.otp = false;
-   $("#login").modal('show');
-}
+   //  if(this.LoggedIn){
+   //    console.log("Id check", this.LoggedIn);
+   //  $("#login").modal('hide');
+   //  }else{
+   //  this.sign = false;
+   //  this.otp = false;
+   // $("#login").modal('show')}
 }
 }

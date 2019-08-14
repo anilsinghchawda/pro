@@ -11,6 +11,10 @@ var multer = require("multer");
 var fileUpload  = require("file-upload");
 var random = require("randomstring");
 var mongo  = require("mongodb");
+var jwt = require("jsonwebtoken");
+var fs = require("fs");
+var fs = require("file-system")
+
 
 app.set('view engine', 'ejs');
 app.use(function(req, res, next) {

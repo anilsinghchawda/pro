@@ -1,3 +1,4 @@
+
 var express = require("express");
 var routes = express.Router();
 var user = require("../models/user");
@@ -11,13 +12,13 @@ routes.get("/", function(req, res){
 		res.send(result);
 })
 });
-routes.get("/logged", function(req, res ){ 
+routes.get("/logged", function(req, res){ 
 	user.find({_id : req.session._id}, function(err, result){
 		console.log("Profile should be edit of", result);
 		res.send(result);
 	})
 });
-routes.patch("/logged", function(req, res ){ 
+routes.patch("/logged", function(req, res){ 
 	user.update({_id : req.session._id}, obj, function(err, result){
 		console.log("Profile should be edit of", result);
 		res.send(result);
