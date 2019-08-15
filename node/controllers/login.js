@@ -72,6 +72,7 @@ routes.post("/", function(req, res){
 			var sessionObj=req.session;
 			console.log("Controller sending", sessionObj);
 			// res.cookie(encryptedString, {maxAge:36000, httpOnly:true, secure:true});
+			// res.locals.session=req.session;....in app.js...
 			res.send(req.session);
 		}else{
 			res.sendStatus(401);
@@ -84,6 +85,7 @@ routes.post("/", function(req, res){
 
 routes.get("/logout", function(req, res){
 	req.session.destroy();
+	res.locals=null;
 	console.log("logout successfully", req.session);
 	res.send(req.session);
 });

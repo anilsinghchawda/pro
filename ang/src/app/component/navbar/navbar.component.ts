@@ -52,6 +52,8 @@ log = {} as logObj;
       // this.temp=back;
       console.log(this.temp);
       this.LoggedIn=back;
+      localStorage.session=back;
+      console.log(localStorage.session);
     $("#login").modal('hide');
     console.log("Login successfull");
      })
@@ -61,7 +63,9 @@ log = {} as logObj;
   logout(){
     this.dulClass.logoutFun().subscribe((back : any)=>{
       console.log(back);
+      localStorage.session=back;
      return this.LoggedIn=back;
+
     })
   }
   signup(obj : userObj){
@@ -80,10 +84,11 @@ log = {} as logObj;
 
     this.dulClass.checkLog().subscribe((back:any)=>{
       console.log("checklog function is checking for sessssiooonnnn..")
-      if(back){
+      if(localStorage){
         console.log("session found..");
        $("#login").modal('hide');
        return this.LoggedIn=back;
+       localStorage.session=back;
       }else{
         this.LoggedIn=null;
         this.sign = false;

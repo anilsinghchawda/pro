@@ -33,6 +33,11 @@ app.use(cache());
 app.use(flash());
 app.use(upload());
 
+app.use(function(req, res, next){
+	res.locals.logo='PreFarm';
+	res.locals.session=req.session;
+});
+
 var port = process.env.PORT || 3000;
 app.listen(3000, function(){
 	console.log("Server Running for Pro on port", port);
