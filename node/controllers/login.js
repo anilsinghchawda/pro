@@ -17,10 +17,10 @@ const cryptr = new Cryptr('hello');
 // const NodeRSA = require('node-rsa');
 
 
-routes.get("/", function(req, res){
-	res.send(req.session);
-	console.log(req.session)
-})
+// routes.get("/", function(req, res){
+// 	res.send(req.session);
+// 	console.log(req.session)
+// })
 
 routes.use(bodyParser());
 routes.use(session({ secret : "anil"}));
@@ -32,13 +32,16 @@ routes.post("/", function(req, res){
 	if(result.length==1){
 		console.log("//..contact matched....//");
 		if(result[0].newPassword==sha1(req.body.password)){
-			console.log("Password match");routes.use(session({ secret : "@Hrer$%dfgWfDG%%#Ggfghh^Fghd3FD#@7dgfhff6645FF"}));
+			console.log("Password match");
 			// routes.use(session({ secret : "@Hrer$%dfgWfDG%%#Ggfghh^Fghd3FD#@7dgfhff6645FF"}));
-			var hour=36000000;
-			req.session.cookie.maxAge = hour
+			// var hour=36000000;
+			// routes.use(express.session({secret:'@Hrer$%dfgWfDG%%#Ggfghh^Fghd3FD#@7dgfhff6645FF', cookie:{originalMaxAge: 36000000}}));
+			// req.session.cookie.maxAge = hour
 			req.session._id=result[0]._id;
 			req.session.name=result[0].name;
 			req.session.userLoggedIn=true;
+			res.locals.session=req.session;
+			console.log('res.locals store', res.locals)
 			// const rsa_private_key = new NodeRSA({b: 512});
 			// const idToken=req.session;
 			// const encrypted = rsa_private_key.encrypt('hello', 'base64');
@@ -58,7 +61,7 @@ routes.post("/", function(req, res){
    //              subject: toString(req.session)
    //          })
 
-   			// var jsonwebtoken = jwt.sign({ foo: 'bar' }, toString(rsa_private_key) , { algorithm: 'RS256'});
+   			// var jsonwebtoken = jwt.sign({session:'req.session' }, toString(rsa_private_key) , { algorithm: 'RS256'});
 
             // console.log(jwt_new);
 			// res.send(json({
@@ -66,12 +69,12 @@ routes.post("/", function(req, res){
 			// 	expiresIn:'10h'
 			// }));
 
-			const encryptedString = cryptr.encrypt(req.session);
+			// const encryptedString = cryptr.encrypt(req.session);
 		 	// const decryptedString = cryptr.decrypt(encryptedString);
-			console.log("Login successfull with id", encryptedString);
+			// console.log("Login successfull with id", encryptedString);
 			var sessionObj=req.session;
 			console.log("Controller sending", sessionObj);
-			// res.cookie(encryptedString, {maxAge:36000, httpOnly:true, secure:true});
+			// res.cookie(sessionCookie, encryptedString, {maxAge:36000, httpOnly:true, secure:true});
 			// res.locals.session=req.session;....in app.js...
 			res.send(req.session);
 		}else{
@@ -85,7 +88,7 @@ routes.post("/", function(req, res){
 
 routes.get("/logout", function(req, res){
 	req.session.destroy();
-	res.locals=null;
+	res.locals.session=null;
 	console.log("logout successfully", req.session);
 	res.send(req.session);
 });

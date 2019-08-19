@@ -37,35 +37,33 @@ log = {} as logObj;
   	this.sign=false;
     this.otp = false;
   }
-  public LoggedIn:any;
-  public userSession:any;
-  public userId:string;
-  public temp:any;
-
-
+ public loggedIn:boolean=null;
   login(obj : logObj):Observable<any>{
     console.log("....................", obj);
     obj.contact = this.users.contact;
     this.dulClass.logFun(obj).subscribe((back : any)=>{
-      console.log(back.userLoggedIn);
-      console.log(back._id);
-      // this.temp=back;
-      console.log(this.temp);
-      this.LoggedIn=back;
-      localStorage.session=back;
-      console.log(localStorage.session);
+      console.log("Navbar component recieving back as  = ", back)
+      localStorage.setItem('session', back);
+      localStorage.setItem('loggedIn', back.userLoggedIn);
+      localStorage.setItem('userId', back._id);
+      localStorage.setItem('userName', back.name);
+      this.loggedIn=true;
+      console.log("localStorage stores =",localStorage.getItem('session'));
+      console.log("localStorage stores =",localStorage.getItem('loggedIn'));
     $("#login").modal('hide');
     console.log("Login successfull");
      })
-    return this.temp;
+    return ;
   }
 
   logout(){
     this.dulClass.logoutFun().subscribe((back : any)=>{
       console.log(back);
-      localStorage.session=back;
-     return this.LoggedIn=back;
-
+      localStorage.removeItem('session');
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('userName');
+      this.loggedIn=false;
     })
   }
   signup(obj : userObj){
@@ -83,22 +81,25 @@ log = {} as logObj;
     ngOnInit() { 
 
     this.dulClass.checkLog().subscribe((back:any)=>{
-      console.log("checklog function is checking for sessssiooonnnn..")
-      if(localStorage){
+      console.log("checklog function is checking for sessssiooonnnn..", back)
+      if(back){
         console.log("session found..");
+       this.loggedIn=true;
        $("#login").modal('hide');
-       return this.LoggedIn=back;
-       localStorage.session=back;
       }else{
-        this.LoggedIn=null;
+        localStorage.removeItem('session');
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userName');
+        this.loggedIn=false;
         this.sign = false;
         this.otp = false;
        $("#login").modal('show');
       }
     })
     
-   //  if(this.LoggedIn){
-   //    console.log("Id check", this.LoggedIn);
+   //  if(localStorage.LoggedIn){
+   //    console.log("Id check", localStorage.LoggedIn);
    //  $("#login").modal('hide');
    //  }else{
    //  this.sign = false;

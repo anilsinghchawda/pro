@@ -25,6 +25,17 @@ import { SearchComponent } from './component/search/search.component';
 import { Product1Component } from './component/product1/product1.component';
 import * as bootstrap from "bootstrap";
 import * as $ from "jquery";
+import { SoldComponent } from './component/sold/sold.component';
+import { SeminarsComponent } from './component/seminars/seminars.component';
+import { KccComponent } from './component/kcc/kcc.component';
+import { AdviserComponent } from './component/adviser/adviser.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { ApplyComponent } from './component/apply/apply.component';
+import { ShareComponent } from './component/share/share.component';
+import { ProblemComponent } from './component/problem/problem.component';
+import { FeedbackComponent } from './component/feedback/feedback.component';
+import { CartComponent } from './component/cart/cart.component';
+import { NotfoundComponent } from './component/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +55,18 @@ import * as $ from "jquery";
     Product2Component,
     SearchComponent,
     Product1Component,
-    AdminnavComponent
+    AdminnavComponent,
+    SoldComponent,
+    SeminarsComponent,
+    KccComponent,
+    AdviserComponent,
+    ContactComponent,
+    ApplyComponent,
+    ShareComponent,
+    ProblemComponent,
+    FeedbackComponent,
+    CartComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

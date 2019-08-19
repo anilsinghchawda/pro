@@ -19,8 +19,8 @@ export class CategoryComponent implements OnInit {
 		this.dulClass.addCate(this.newCate).subscribe((info : any)=>{
 			console.log("respond on category.ts",info);
 			$("#add").modal("hide");
-			this.cate.push(info);
-			// return this.cate=info;
+			// this.cate.push(info);
+			return this.cate=info;
 		})
 	}
 	emptied(){
