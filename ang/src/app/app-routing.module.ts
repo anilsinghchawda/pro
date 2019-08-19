@@ -10,9 +10,10 @@ const routes: Routes = [
 path : 'admin', redirectTo :'admin', pathMatch : 'full'
 },{
 path : '' , component : HomeComponent
-},{
-path : '**', component : NotfoundComponent
-},
+ },
+//{
+// path : '**', component : NotfoundComponent
+// },
 {
 path : 'home' , component : HomeComponent
 },{
