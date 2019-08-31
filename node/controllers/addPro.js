@@ -8,6 +8,7 @@ var flash = require("express-flash");
 var session = require("express-session");
 var bodyParser=require("body-parser");
 var path = require("path");
+// var jQuery = require("jquery");
 
 routes.use(session({secret:"anil"}));
 routes.use(flash());
@@ -20,6 +21,7 @@ routes.get("/", function(req,res){
 	res.render("addPro", pagedata);
 	});
 });
+// jQuery("Season").checked(true);
 routes.post("/", function(req, res){
 	console.log(req.body);
 	console.log(req.files);

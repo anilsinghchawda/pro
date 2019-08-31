@@ -36,6 +36,7 @@ import { ProblemComponent } from './component/problem/problem.component';
 import { FeedbackComponent } from './component/feedback/feedback.component';
 import { CartComponent } from './component/cart/cart.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
+import { SalaryComponent } from './component/salary/salary.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { NotfoundComponent } from './component/notfound/notfound.component';
     ProblemComponent,
     FeedbackComponent,
     CartComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SalaryComponent
   ],
   imports: [
     BrowserModule,

@@ -72,7 +72,7 @@ routes.post("/", function(req, res){
 			// const encryptedString = cryptr.encrypt(req.session);
 		 	// const decryptedString = cryptr.decrypt(encryptedString);
 			// console.log("Login successfull with id", encryptedString);
-			var sessionObj=req.session;
+			const sessionObj=req.session;
 			console.log("Controller sending", sessionObj);
 			// res.cookie(sessionCookie, encryptedString, {maxAge:36000, httpOnly:true, secure:true});
 			// res.locals.session=req.session;....in app.js...
@@ -92,5 +92,6 @@ routes.get("/logout", function(req, res){
 	console.log("logout successfully", req.session);
 	res.send(req.session);
 });
+
 
 module.exports=routes;

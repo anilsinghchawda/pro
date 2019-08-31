@@ -5,10 +5,11 @@ var mongo  = require("mongodb");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var sha1 = require("sha1");
+var reqSession = require("./login");
 routes.use(bodyParser());
 
 routes.get("/", function(req, res){
-res.send(req.session);
+res.send(res.session);
 });
 
 module.exports=routes;
