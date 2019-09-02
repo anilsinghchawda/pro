@@ -15,9 +15,9 @@ export class CategoryService {
 		console.log("Service posting", a);
 		return this.http.post(this.url, a);
 	}
-	delCate(id : number){
-		console.log("Service posting for deleting ", id);
-		return this.http.delete(this.url);
+	delCate(){
+		console.log("Service posting for deleting ");
+		return this.http.get("http://localhost:3000/category/delete");
 	}
   constructor(private http : HttpClient) { }
 }

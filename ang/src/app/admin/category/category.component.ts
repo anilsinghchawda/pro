@@ -36,7 +36,7 @@ export class CategoryComponent implements OnInit {
 	del(){
 		var index = this.cate.indexOf(this.cateObj);
 		console.log(this.cateObj._id);
-		this.dulClass.delCate(this.cateObj._id).subscribe((info : any)=>{
+		this.dulClass.delCate().subscribe((info : any)=>{
 			console.log("Deleted", index);
 			console.log("Deleted obj", info);
 			this.cate.splice(index, 1);

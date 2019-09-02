@@ -29,7 +29,7 @@ log = {} as logObj;
   	this.sign=true;
   }
   otpCheck(users : userObj){
-    // this.otpClass.sendOtp(users).subscribe((sended : any)=>{})
+    // this.otpClass.sendOtp(users.contact).subscribe((sended : any)=>{})
     this.otp = true;
   
   }

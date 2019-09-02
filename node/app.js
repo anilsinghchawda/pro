@@ -36,7 +36,25 @@ app.use(upload());
 app.use(function(req, res, next){
 	res.locals.logo='PreFarm';
 	res.locals.session=req.session;
+	next();
 });
+app.use(function(req, res){
+	res.locals.session=req.session;
+	res.send(req.session._id);
+})
+// app.use('/', function(req, res){
+//    if(req.session.page_views){
+//    	console.log("if is running " , req.session.page_views)
+//       req.session.page_views++;
+//       // res.send("You visited this page " + req.session.page_views + " times");
+//       res.send(req.session)
+//    } else {
+//       req.session.page_views = 1;
+//       console.log("else is running " , req.session.page_views)
+//       // res.send("Welcome to this page for the first time!");
+//       res.send(req.session)
+//    }
+// });
 
 var port = process.env.PORT || 3000;
 app.listen(3000, function(){

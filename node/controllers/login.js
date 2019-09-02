@@ -23,9 +23,17 @@ const cryptr = new Cryptr('hello');
 // })
 
 routes.use(bodyParser());
-routes.use(session({ secret : "anil"}));
+routes.use(session({ secret : "Asdd@$#7as5dD5EE6554$#5&^&$5%$GF575sfdgdsfA9SRT8Y"}));
 
-routes.post("/", function(req, res){
+const PayloadCheck=(req, res, next)=>{
+	if(req.body){
+		next();
+	}else{
+		res.status(403).send({errorMessage:'You need payload'});
+	}
+}
+
+routes.post("/", PayloadCheck,function(req, res){
 	console.log("post object ",req.body);
 	user.find({contact : req.body.contact}, function(err, result){
 		console.log("find result ", result);
@@ -40,7 +48,7 @@ routes.post("/", function(req, res){
 			req.session._id=result[0]._id;
 			req.session.name=result[0].name;
 			req.session.userLoggedIn=true;
-			res.locals.session=req.session;
+			// res.locals.session=req.session;
 			console.log('res.locals store', res.locals)
 			// const rsa_private_key = new NodeRSA({b: 512});
 			// const idToken=req.session;
@@ -68,7 +76,6 @@ routes.post("/", function(req, res){
 			// 	idToken:jwtBearerToken,
 			// 	expiresIn:'10h'
 			// }));
-
 			// const encryptedString = cryptr.encrypt(req.session);
 		 	// const decryptedString = cryptr.decrypt(encryptedString);
 			// console.log("Login successfull with id", encryptedString);

@@ -9,7 +9,9 @@ var reqSession = require("./login");
 routes.use(bodyParser());
 
 routes.get("/", function(req, res){
-res.send(res.session);
+console.log("session is ", req.session)
+res.send(req.session);
 });
+
 
 module.exports=routes;

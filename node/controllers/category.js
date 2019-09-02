@@ -9,17 +9,17 @@ routes.get("/", function(req, res){
 		res.send(result);
 })
 });
-routes.delete("/", function(req, res){
-		var id = mongo.ObjectId(req.body._id);
+routes.get("/delete", function(req, res){
+		var id = mongo.ObjectId(req.body);
 		console.log("The ID recieve at category controller is ",id);
 		category.remove({_id : id}, function(err, result){
 			res.send(result);
 		})
 });
-routes.post("/", function(req, res){
+routes.post("/", function(req, res, next){
 	console.log("Category added controllers", req.body);
 	category.insert(req.body, function(err, result){
-		res.send(result.ops[0]);
+		// res.send(result);
 	})
 });
 module.exports=routes;
